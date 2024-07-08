@@ -34,11 +34,9 @@ git clone --recursive https://github.com/CesiumGS/cesium-native.git
 #### Compile from command line
 
 ```bash
-
 cmake -B build -S . -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Debug
 cmake --build build --config Release
-
 ```
 
 #### Compile with any Visual Studio version using CMake generated projects
