@@ -1,21 +1,3 @@
-# Cesium Native
-
-Cesium Native is a set of C++ libraries for 3D geospatial, including:
-
-* [3D Tiles](https://github.com/CesiumGS/3d-tiles) runtime streaming
-* lightweight glTF serialization and deserialization, and
-* high-precision 3D geospatial math types and functions, including support for global-scale WGS84 ellipsoids.
-
-[![License](https://img.shields.io/:license-Apache_2.0-blue.svg)](https://github.com/CesiumGS/cesium-native/blob/main/LICENSE)
-[![Build Status](https://github.com/CesiumGS/cesium-native/actions/workflows/build.yml/badge.svg)](https://github.com/CesiumGS/cesium-native/actions/workflows/build.yml)
-
-Cesium Native powers Cesium's runtime integrations for [Cesium for Unreal](https://github.com/CesiumGS/cesium-unreal), [Cesium for Unity](https://github.com/CesiumGS/cesium-unity), [Cesium for Omniverse](https://github.com/CesiumGS/cesium-omniverse), and [Cesium for O3DE](https://github.com/CesiumGS/cesium-o3de). Cesium Native is the foundational layer for any 3D geospatial software, especially those that want to stream 3D Tiles.
-
-![Cesium Platform and Ecosystem](./doc/integration-ecosystem-diagram.jpg)
-*<p align="center">A high-level Cesium platform architecture with the runtime integrations powered by Cesium Native and streaming content from Cesium ion.</p>*
-
-### :card_file_box:Libraries Overview
-
 | Library | Description |
 | -- | -- |
 | **Cesium3DTiles** | Lightweight 3D Tiles classes. |
@@ -34,10 +16,6 @@ Cesium Native powers Cesium's runtime integrations for [Cesium for Unreal](https
 | **CesiumUtility** | Utility functions for JSON parsing, URI processing, etc. |
 
 
-### :green_book:License
-
-[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). Cesium Native is free for both commercial and non-commercial use.
-
 ## 💻Developers
 
 ### ⭐Prerequisites
@@ -46,40 +24,22 @@ Cesium Native powers Cesium's runtime integrations for [Cesium for Unreal](https
 * CMake 3.15+
 * For best JPEG-decoding performance, you must have [nasm](https://www.nasm.us/) installed so that CMake can find it. Everything will work fine without it, just slower.
 
-### :rocket:Getting Started
-
-#### Clone the repo
 
 Check out the repo with:
 
 ```bash
-git clone git@github.com:CesiumGS/cesium-native.git --recurse-submodules
-```
-
-If you forget the `--recurse-submodules`, nothing will work because the git submodules will be missing. You should be able to fix it with:
-
-```bash
-git submodule update --init --recursive
+git clone --recursive https://github.com/CesiumGS/cesium-native.git
 ```
 
 #### Compile from command line
 
 ```bash
-## Windows compilation using Visual Studio
-cmake -B build -S . -G "Visual Studio 15 2017 Win64"
+
+cmake -B build -S . -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Debug
 cmake --build build --config Release
 
-## Linux compilation
-cmake -B build -S .
-cmake --build build
 ```
-
-#### Compile from Visual Studio Code
-
-1) Install the `CMake Tools` extension. It should prompt you to generate project files from CMake.
-2) On Windows, choose `Visual Studio 2017 Release - amd64` as the kit to build. Or choose an appropriate kit for your platform.
-3) Then press Ctrl-Shift-P and execute the `CMake: Build` task or press F7.
 
 #### Compile with any Visual Studio version using CMake generated projects
 
